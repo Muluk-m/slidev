@@ -85,25 +85,8 @@ MCP 的架构如图组成
 
 # MCP 整体架构
 
-<br/>
 
-```mermaid {scale: 0.75}
-flowchart LR
-    subgraph "Your Computer"
-        Host["MCP Client(Claude, IDEs, Tools)"]
-        S1["MCP Server A"]
-        S2["MCP Server B"]
-        S3["MCP Server C"]
-        Host <-->|"MCP Protocol"| S1
-        Host <-->|"MCP Protocol"| S2
-        Host <-->|"MCP Protocol"| S3
-        S1 <--> D1[("Local\nData Source A")]
-        S2 <--> D2[("Local\nData Source B")]
-    end
-    subgraph "Internet"
-        S3 <-->|"Web APIs"| D3[("Remote\nService C")]
-    end
-```
+![](/mcp-arch.webp){width=400px height=200px}
 
 <!--
 - MCP 主机：像 Claude Desktop、IDE 或 AI 工具这样的程序，需要通过 MCP 访问数据
